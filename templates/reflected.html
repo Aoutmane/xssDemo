@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Reflected XSS</h1>
+    <p>You entered: <strong>{{ user_input }}</strong></p>
+    <p>Escaped output: <strong>{{ escaped_input }}</strong></p>
+    <a href="/">Back</a>
+{% endblock %}

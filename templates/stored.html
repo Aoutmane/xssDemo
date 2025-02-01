@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Stored XSS</h1>
+    <p>Your comment has been stored!</p>
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment|safe }}</li>
+        {% endfor %}
+    
+    </ul>
+    <a href="/">Back</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>XSS Vulnerability Demo</h1>
+
+    <h2>Reflected XSS</h2>
+    <form action="/reflected" method="GET">
+        <input type="text" name="input" placeholder="Enter something">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Stored XSS</h2>
+    <form action="/stored" method="POST">
+        <input type="text" name="comment" placeholder="Leave a comment">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>DOM-based XSS</h2>
+    <a href="/dom?input=<script>alert('DOM XSS')</script>" class="btn">Click me for DOM XSS</a>
+{% endblock %}
